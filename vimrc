@@ -40,6 +40,11 @@
  set expandtab
  retab
 
+ set foldmethod=indent   
+ set foldnestmax=10
+ set nofoldenable
+ set foldlevel=2
+
  syntax enable
  let g:solarized_termcolors=256
  set background=dark
