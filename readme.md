@@ -9,3 +9,8 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```sh
 vim +PluginInstall +qall
 ```
+* Build YouCompleteMerequires
+```sh
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --all
+```
