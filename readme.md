@@ -12,5 +12,5 @@ $ vim +PluginInstall +qall
 * Build YouCompleteMe
 ```sh
 $ cd ~/.vim/bundle/YouCompleteMe
-$ ./install.py --all
+$ ./install.py --clang-completer
 ```
