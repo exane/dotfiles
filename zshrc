@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/tim/.oh-my-zsh
+export ZSH=/home/tim/.oh-my-zsh
 stty -ixon
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -57,6 +57,7 @@ plugins=(git)
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Workspace
+export PATH=$PATH:$GOPATH/bin
 
 source $ZSH/oh-my-zsh.sh
 
