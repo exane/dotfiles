@@ -130,18 +130,19 @@
  map <leader><space> :CtrlP<cr>
 
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
- " => NERD Tree
+ " => NERd Tree
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  " set autochdir
  " let NERDTreeChDirMode=2
  " nnoremap <leader>n :NERDTree .<CR>
- let NERDTreeQuitOnOpen=1 
- autocmd StdinReadPre * let s:std_in=1
- autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
- autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+ " let NERDTreeQuitOnOpen=1 
+ " autocmd StdinReadPre * let s:std_in=1
+ " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+ " autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
  let g:NERDTreeDirArrowExpandable = '▸'
  let g:NERDTreeDirArrowCollapsible = '▾'
- 
+ map <leader>e :NERDTreeToggle<cr>
+
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  " => Syntastic
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
