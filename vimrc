@@ -22,6 +22,8 @@
  Plugin 'vim-airline/vim-airline'
  Plugin 'vim-airline/vim-airline-themes'
  Plugin 'Valloric/YouCompleteMe'
+ Plugin 'tpope/vim-rails'
+ Plugin 'vim-ruby/vim-ruby'
 
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  " => No more Plugins 
