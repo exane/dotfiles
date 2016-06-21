@@ -110,6 +110,8 @@
  let g:airline#extensions#tabline#enabled = 1
  let g:airline_theme='solarized'
  let g:airline_theme='dark'
+ set laststatus=2
+
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  " => Vim-Go
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
