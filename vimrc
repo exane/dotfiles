@@ -24,6 +24,7 @@
  Plugin 'Valloric/YouCompleteMe'
  Plugin 'tpope/vim-rails'
  Plugin 'vim-ruby/vim-ruby'
+ Plugin 'scrooloose/nerdcommenter'
 
  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  " => No more Plugins 
