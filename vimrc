@@ -42,12 +42,15 @@
  set tabstop=2
  set shiftwidth=2
  set expandtab
- retab
-
+ retabset 
+ 
  set foldmethod=indent   
  set foldnestmax=10
  set nofoldenable
  set foldlevel=2
+ 
+ " Non-case sensitive search
+ set smartcase  
 
  syntax enable
  let g:solarized_termcolors=256
@@ -80,6 +83,20 @@
 
  " Don't redraw while executing macros (good performance config)
  set lazyredraw 
+ 
+ " Line wrapping off
+ set nowrap
+ 
+ " don't need to show mode since we have airline
+ set noshowmode 
+ 
+ set numberwidth=4
+ set encoding=utf-8
+ set guioptions=acg
+ set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+ set cursorline
+ set splitright
+
 
  " No annoying sound on errors
  set noerrorbells
