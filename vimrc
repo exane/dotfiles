@@ -114,14 +114,19 @@
  inoremap <c-s> <Esc>:w!<cr>
  nnoremap :Q :q
 
- map <leader>l :bnext<cr>
- map <leader>h :bprevious<cr>
+ map <leader>x :bnext<cr>
+ map <leader>y :bprevious<cr>
 
  " Fast saving
  nmap <leader>w :w!<cr>
  nnoremap <CR> :noh<CR><CR>
 
  set hidden
+ 
+ " split views
+ nmap <silent> <leader>hs :split<CR>
+ nmap <silent> <leader>vs :vsplit<CR>
+ nmap <silent> <leader>sc :close<CR>
 
  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  " => vim-Airline
