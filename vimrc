@@ -42,7 +42,7 @@
  set tabstop=2
  set shiftwidth=2
  set expandtab
- retabset 
+ retab
  
  set foldmethod=indent   
  set foldnestmax=10
