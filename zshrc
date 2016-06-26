@@ -56,7 +56,7 @@ plugins=(git)
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/Workspace
+export GOPATH=/media/sf_golangWorkspace
 export PATH=$PATH:$GOPATH/bin
 
 source $ZSH/oh-my-zsh.sh
