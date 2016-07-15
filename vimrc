@@ -48,6 +48,10 @@
  set foldnestmax=10
  set nofoldenable
  set foldlevel=2
+
+ " fixes delete key on osx
+ set backspace=indent,eol,start
+
  
  " Non-case sensitive search
  set smartcase  
