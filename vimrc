@@ -25,6 +25,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jiangmiao/auto-pairs'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => No more Plugins 
@@ -177,6 +179,8 @@ let g:go_fmt_autosave = 1
 " => YouCompleteMe
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set completeopt-=preview
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => ctags
@@ -244,3 +248,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_go_checkers = ['govet', 'errcheck']
 " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-javascript
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:javascript_plugin_jsdoc = 1
