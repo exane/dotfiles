@@ -1,4 +1,5 @@
-## access with windows gvim vimrc from babun  
+## access with windows gvim vimrc from babun 
+```sh
   gvim() {
     OLD_HOME=$HOME
     OLD_VIMRUNTIME=$VIMRUNTIME
@@ -9,3 +10,4 @@
     export HOME=$OLD_HOME
     export VIMRUNTIME=$OLD_VIMRUNTIME
   }
+```
