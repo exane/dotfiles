@@ -1,4 +1,4 @@
-## access with windows gvim vimrc from babun 
+## access with windows gvim the vimrc from babun 
 ```sh
   gvim() {
     OLD_HOME=$HOME
