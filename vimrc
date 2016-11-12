@@ -253,7 +253,7 @@ let g:ycm_confirm_extra_conf=0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:ctrlp_map = '<space>'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store'
 map <leader>f :CtrlPLine<cr>
 map <leader><space> :CtrlP<cr>
 
