@@ -21,12 +21,19 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Valloric/YouCompleteMe'
+if has('gui_running')
+  Plugin 'Shougo/neocomplete'
+  Plugin 'Shougo/neosnippet'
+  Plugin 'Shougo/neosnippet-snippets'
+else
+  Plugin 'Valloric/YouCompleteMe'
+endif
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'flazz/vim-colorschemes'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => No more Plugins 
@@ -39,13 +46,41 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let os=substitute(system('uname'), '\n', '', '')
 
+" settings for Mac OS X
 if os == 'Darwin'
-  " settings for Mac OS X
-
   " fixes delete key on osx
   set backspace=indent,eol,start
-
 endif
+
+" settings for gvim
+if has('gui_running')
+  set backspace=indent,eol,start
+
+  vmap <C-c> "+yi
+  vmap <C-x> "+c
+  imap <C-v> <C-r><C-o>+
+
+  set guioptions-=m  "remove menu bar
+  set guioptions-=T  "remove toolbar
+  set guioptions-=r  "remove right-hand scroll bar
+  set guioptions-=L  "remove left-hand scroll bar
+
+  set lines=60 columns=220
+
+  if has("gui_win32")
+    " set guifont=UbuntuMonoDerivativePowerline_N:h12:cDEFAULT
+    set guifont=Consolas:h12:cDEFAULT
+  endif
+
+  " scriptencoding utf-9
+  " set encoding=utf-8
+endif
+
+" reload vimrc changes
+nmap <leader>r :source ~/.vimrc<CR>:edit<CR>
+
+" autoindent
+noremap <F7> gg=G``
 
 " Sets how many lines of history VIM has to remember
 set history=500
@@ -61,7 +96,6 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
-
 " Non-case sensitive search
 set smartcase  
 
@@ -70,7 +104,8 @@ let g:solarized_termcolors=256
 set background=dark
 
 try
-  colorscheme solarized 
+  "colorscheme solarized 
+  colorscheme Molokai
 catch
 endtry
 
@@ -218,6 +253,7 @@ let g:ycm_confirm_extra_conf=0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:ctrlp_map = '<space>'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 map <leader>f :CtrlPLine<cr>
 map <leader><space> :CtrlP<cr>
 
@@ -246,6 +282,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_ruby_checkers = ['']
 let g:syntastic_go_checkers = ['govet', 'errcheck']
 " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
@@ -253,3 +290,77 @@ let g:syntastic_go_checkers = ['govet', 'errcheck']
 " => vim-javascript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:javascript_plugin_jsdoc = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NeoComplete
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+      \ 'default' : '',
+      \ 'vimshell' : $HOME.'/.vimshell_hist',
+      \ 'scheme' : $HOME.'/.gosh_completions'
+      \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+  let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
