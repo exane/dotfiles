@@ -69,7 +69,7 @@ if has('gui_running')
 
   if has("gui_win32")
     " set guifont=UbuntuMonoDerivativePowerline_N:h12:cDEFAULT
-    set guifont=Consolas:h12:cDEFAULT
+    set guifont=Consolas:h10:cDEFAULT
   endif
 
   " scriptencoding utf-9
