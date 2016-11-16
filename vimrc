@@ -31,10 +31,12 @@ endif
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'pangloss/vim-javascript'
 Plugin 'alvan/vim-closetag'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'tpope/vim-commentary'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => No more Plugins 
@@ -291,6 +293,11 @@ let g:syntastic_go_checkers = ['govet', 'errcheck']
 " => vim-javascript
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:javascript_plugin_jsdoc = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-jsx
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:jsx_ext_required = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NeoComplete
