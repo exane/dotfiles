@@ -272,6 +272,7 @@ map <leader><space> :CtrlP<cr>
 " autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeIgnore = ['\.swp$', '\.swo$']
 map <leader>e :NERDTreeToggle<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
