@@ -177,6 +177,17 @@ nmap <silent> <leader>hs :split<CR>
 nmap <silent> <leader>vs :vsplit<CR>
 nmap <silent> <leader>sc :close<CR>
 
+" indent blocks without losing selection
+vnoremap > >gv
+vnoremap < <gv
+
+" tab indent
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
 " smart way to move between windows
 "map <C-j> <C-W>j
 "map <C-k> <C-W>k
