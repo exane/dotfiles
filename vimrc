@@ -73,10 +73,21 @@ if has('gui_running')
   if has("gui_win32")
     " set guifont=UbuntuMonoDerivativePowerline_N:h12:cDEFAULT
     set guifont=Consolas:h10:cDEFAULT
+
   endif
+
+  try
+    colorscheme Molokai
+  catch
+  endtry
 
   " scriptencoding utf-9
   " set encoding=utf-8
+else
+  try
+    colorscheme solarized 
+  catch
+  endtry
 endif
 
 " reload vimrc changes
@@ -105,12 +116,6 @@ set smartcase
 syntax enable
 let g:solarized_termcolors=256
 set background=dark
-
-try
-  "colorscheme solarized 
-  colorscheme Molokai
-catch
-endtry
 
 " Set to auto read when a file is changed from the outside
 set autoread
