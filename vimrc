@@ -96,6 +96,9 @@ nmap <leader>r :source ~/.vimrc<CR>:edit<CR>
 " autoindent
 noremap <F7> gg=G``
 
+" no swap files
+set noswapfile
+
 " Sets how many lines of history VIM has to remember
 set history=500
 set so=7
