@@ -307,6 +307,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['']
 let g:syntastic_go_checkers = ['govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': []  }
+noremap <C-w>e :SyntasticCheck<CR>
+noremap <C-w>f :SyntasticToggleMode<CR>
 " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
