@@ -323,6 +323,11 @@ let g:javascript_plugin_jsdoc = 1
 let g:jsx_ext_required = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-commentary
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType Vagrantfile setlocal commentstring=#\ %s
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NeoComplete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Disable AutoComplPop.
