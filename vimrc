@@ -1,5 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off
+if !has("win32unix")
+  let os=substitute(system('uname'), '\n', '', '')
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle
@@ -16,16 +19,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive' 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim' 
 Plugin 'fatih/vim-go'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-if has('gui_running')
-  Plugin 'Shougo/neocomplete'
-  Plugin 'Shougo/neosnippet'
-  Plugin 'Shougo/neosnippet-snippets'
-else
+if !has("win32unix") || has("gui_running")
+  Plugin 'vim-airline/vim-airline'
+  Plugin 'vim-airline/vim-airline-themes'
+  Plugin 'scrooloose/syntastic'
   Plugin 'Valloric/YouCompleteMe'
 endif
 Plugin 'tpope/vim-rails'
@@ -47,10 +46,9 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let os=substitute(system('uname'), '\n', '', '')
 
 " settings for Mac OS X
-if os == 'Darwin'
+if !has("win32unix") && os == 'Darwin'
   " fixes delete key on osx
   set backspace=indent,eol,start
 endif
@@ -196,16 +194,6 @@ inoremap <S-Tab> <C-D>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
-" smart way to move between windows
-"map <C-j> <C-W>j
-"map <C-k> <C-W>k
-"map <C-h> <C-W>h
-"map <C-l> <C-W>l
-"noremap <Up> <NOP>
-"noremap <Down> <NOP>
-"noremap <Left> <NOP>
-"noremap <Right> <NOP>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-Airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -239,37 +227,6 @@ set completeopt-=preview
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" => ctags
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:tagbar_type_go = {  
-"\ 'ctagstype' : 'go',
-"\ 'kinds'     : [
-"\ 'p:package',
-"\ 'i:imports:1',
-"\ 'c:constants',
-"\ 'v:variables',
-"\ 't:types',
-"\ 'n:interfaces',
-"\ 'w:fields',
-"\ 'e:embedded',
-"\ 'm:methods',
-"\ 'r:constructor',
-"\ 'f:functions'
-"\ ],
-"\ 'sro' : '.',
-"\ 'kind2scope' : {
-"\ 't' : 'ctype',
-"\ 'n' : 'ntype'
-"\ },
-"\ 'scope2kind' : {
-"\ 'ctype' : 't',
-"\ 'ntype' : 'n'
-"\ },
-"\ 'ctagsbin'  : 'gotags',
-"\ 'ctagsargs' : '-sort -silent'
-"\ }
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CtrlP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -297,20 +254,20 @@ map <leader>e :NERDTreeToggle<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Syntastic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+if !has("win32unix") || has("gui_running")
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_ruby_checkers = ['']
-let g:syntastic_go_checkers = ['govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': []  }
-noremap <C-w>e :SyntasticCheck<CR>
-noremap <C-w>f :SyntasticToggleMode<CR>
-" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 0
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
+  let g:syntastic_ruby_checkers = ['']
+  let g:syntastic_go_checkers = ['govet', 'errcheck']
+  let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': []  }
+  " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-javascript
@@ -326,75 +283,3 @@ let g:jsx_ext_required = 0
 " => vim-commentary
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType Vagrantfile setlocal commentstring=#\ %s
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => NeoComplete
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-      \ 'default' : '',
-      \ 'vimshell' : $HOME.'/.vimshell_hist',
-      \ 'scheme' : $HOME.'/.gosh_completions'
-      \ }
-
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-  let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-" AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
