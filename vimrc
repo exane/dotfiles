@@ -36,6 +36,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-commentary'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'posva/vim-vue'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => No more Plugins 
