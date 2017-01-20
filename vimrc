@@ -37,6 +37,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'posva/vim-vue'
+Plugin 'elixir-lang/vim-elixir'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => No more Plugins 
