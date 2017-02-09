@@ -233,8 +233,8 @@ let g:ycm_confirm_extra_conf=0
 " => CtrlP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:ctrlp_map = '<space>'
-let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store'
+let g:ctrlp_extensions = ['line', 'dir']
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|vendor'
 map <leader>f :CtrlPLine<cr>
 map <leader><space> :CtrlP<cr>
 
