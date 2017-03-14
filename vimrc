@@ -196,6 +196,10 @@ inoremap <S-Tab> <C-D>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
+" jump back to last line
+nnoremap <BS> ``
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-Airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
