@@ -199,6 +199,9 @@ vnoremap <S-Tab> <gv
 " jump back to last line
 nnoremap <BS> ``
 
+" Make tabs, trailing whitespace, and non-breaking spaces visible
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set list
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-Airline
