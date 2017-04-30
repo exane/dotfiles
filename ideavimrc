@@ -1,5 +1,0 @@
-source ~/.vimrc
-
-remap <C-^> :action RecentFiles<CR>
-map <leader><space> :action GotoFile<CR>
-map <leader>r :source ~/.ideavimrc<CR>
