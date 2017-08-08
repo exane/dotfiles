@@ -24,8 +24,9 @@ Plugin 'fatih/vim-go'
 if !has("win32unix") || has("gui_running")
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
-  Plugin 'scrooloose/syntastic'
+  " Plugin 'scrooloose/syntastic'
   Plugin 'Valloric/YouCompleteMe'
+  Plugin 'w0rp/ale'
 endif
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
