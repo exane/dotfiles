@@ -40,6 +40,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'posva/vim-vue'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'StanAngeloff/php.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => No more Plugins 
@@ -244,8 +245,8 @@ let g:ycm_confirm_extra_conf=0
 "let g:ctrlp_map = '<space>'
 let g:ctrlp_extensions = ['line', 'dir']
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|vendor'
-map <leader>f :CtrlPLine<cr>
 map <leader><space> :CtrlP<cr>
+map <space> :CtrlPLine<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERd Tree
@@ -265,20 +266,20 @@ map <leader>e :NERDTreeToggle<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Syntastic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if !has("win32unix") || has("gui_running")
-  set statusline+=%#warningmsg#
-  set statusline+=%{SyntasticStatuslineFlag()}
-  set statusline+=%*
+" if !has("win32unix") || has("gui_running")
+"   set statusline+=%#warningmsg#
+"   set statusline+=%{SyntasticStatuslineFlag()}
+"   set statusline+=%*
 
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 0
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_check_on_wq = 0
-  let g:syntastic_ruby_checkers = ['']
-  let g:syntastic_go_checkers = ['govet', 'errcheck']
-  let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': []  }
-  " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-endif
+"   let g:syntastic_always_populate_loc_list = 1
+"   let g:syntastic_auto_loc_list = 0
+"   let g:syntastic_check_on_open = 1
+"   let g:syntastic_check_on_wq = 0
+"   let g:syntastic_ruby_checkers = ['']
+"   let g:syntastic_go_checkers = ['govet', 'errcheck']
+"   let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': []  }
+"   " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+" endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-javascript
