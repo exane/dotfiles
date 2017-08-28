@@ -41,6 +41,7 @@ Plugin 'posva/vim-vue'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'StanAngeloff/php.vim'
+Plugin 'kchmck/vim-coffee-script'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => No more Plugins 
@@ -111,7 +112,7 @@ set shiftwidth=2
 set expandtab
 retab
 
-set foldmethod=indent   
+set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
@@ -248,7 +249,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|vendor'
 map <leader><space> :CtrlP<cr>
 map <space> :CtrlPLine<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERd Tree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set autochdir
@@ -262,24 +263,6 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeIgnore = ['\.swp$', '\.swo$']
 map <leader>e :NERDTreeToggle<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Syntastic
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" if !has("win32unix") || has("gui_running")
-"   set statusline+=%#warningmsg#
-"   set statusline+=%{SyntasticStatuslineFlag()}
-"   set statusline+=%*
-
-"   let g:syntastic_always_populate_loc_list = 1
-"   let g:syntastic_auto_loc_list = 0
-"   let g:syntastic_check_on_open = 1
-"   let g:syntastic_check_on_wq = 0
-"   let g:syntastic_ruby_checkers = ['']
-"   let g:syntastic_go_checkers = ['govet', 'errcheck']
-"   let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': []  }
-"   " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-" endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-javascript
