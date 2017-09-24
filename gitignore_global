@@ -1,0 +1,7 @@
+*.sw*
+Session.vim
+.vagrant/
+Vagrantfile
+.envrc
+.byebug_history
+node_modules

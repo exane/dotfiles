@@ -1,0 +1,13 @@
+[user]
+  email = raco0n@gmx.de
+  name = Tim Meier
+[core]
+  editor = vim
+  fileMode = false
+  excludesfile = "~/.gitignore_global"
+  trustExitCode = true
+  trustctime = false
+[push]
+  default = simple
+[merge]
+  tool = gvimdiff
