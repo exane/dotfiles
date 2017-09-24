@@ -8,9 +8,6 @@
 # dotfiles directory"
 dir="$HOME/dotfiles"
 
-# old dotfiles backup directory
-olddir="$HOME/dotfiles_old"
-
 # list of files/folders to symlink in homedir
 files="vimrc gitconfig gitignore_global"
 
@@ -26,17 +23,17 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv $HOME/.$file $olddir
+  echo "Remove .$file from $HOME"
+  rm $HOME/.$file
 
-    echo "Creating symlink to $file in home directory."
-    if [ $OSTYPE == "cygwin" ]; then
-      cyg_dest=$(cygpath -w "$HOME/.$file")
-      cyg_target=$(cygpath -w "$dir/$file")
-      cmd /C "mklink /H $cyg_dest $cyg_target"
-    else
-      ln -s $dir/$file ~/.$file
-    fi
+  echo "Creating symlink from $dir/$file to .$file in $HOME"
+  if [ $OSTYPE == "cygwin" ]; then
+    cyg_dest=$(cygpath -w "$HOME/.$file")
+    cyg_target=$(cygpath -w "$dir/$file")
+    cmd /C "mklink /H $cyg_dest $cyg_target"
+  else
+    ln -s $dir/$file ~/.$file
+  fi
 done
