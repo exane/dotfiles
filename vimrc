@@ -161,6 +161,7 @@ set splitright
 
 " No annoying sound on errors
 set noerrorbells
+set belloff=all
 set novisualbell
 set tm=500
 
