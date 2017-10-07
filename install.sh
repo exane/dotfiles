@@ -9,19 +9,24 @@
 dir="$HOME/dotfiles"
 
 # list of files/folders to symlink in homedir
-files="vimrc gitconfig gitignore_global"
+files="vimrc zshrc gitconfig gitignore_global"
 
 ##########
 
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in $HOME"
-mkdir -p $olddir
-echo "...done"
+echo "Installing oh-my-zsh..."
+
+if [ ! -d $HOME/.oh-my-zsh ]; then
+  echo "downloading oh-my-zsh"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  echo "oh-my-zsh installed."
+else
+  echo "oh-my-zsh already installed - skipping"
+fi
+
 
 # change to the dotfiles directory
-echo "Changing to the $dir directory"
+echo "Changing to $dir directory"
 cd $dir
-echo "...done"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
@@ -37,3 +42,6 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
   fi
 done
+
+echo ""
+echo "Successfully installed dotfiles!"
