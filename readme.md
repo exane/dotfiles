@@ -47,17 +47,9 @@ to
 ## Install
 
 * Execute install.sh
-* Set up Vundle
-```sh
-$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
-* Install Plugins
-```sh
-$ vim +PluginInstall +qall
-```
-* Build YouCompleteMe
-```sh
-$ cd ~/.vim/bundle/YouCompleteMe
-$ ./install.py --clang-completer
-```
-
+* Register xlaunch_startup.sh to launch on boot
+  windows10: 
+  -> group policy editor
+  -> scripts
+  -> startup
+  -> add
