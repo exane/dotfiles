@@ -36,7 +36,7 @@ cd $dir
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
   echo "Remove .$file from $HOME"
-  rm $HOME/.$file
+  rm $HOME/.$file || true
 
   echo "Creating symlink from $dir/$file to .$file in $HOME"
   if [ $OSTYPE == "cygwin" ]; then
