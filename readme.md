@@ -44,7 +44,7 @@ to
 - Install [cmder](https://github.com/cmderdev/cmder/releases)
 - Import settings from ./cmder/ConEmu.xml (in repo)
 
-## Install
+# Install
 
 * Execute install.sh
 * Register xlaunch_startup.sh to launch on boot
