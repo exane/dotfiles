@@ -11,13 +11,14 @@ Set-ExecutionPolicy Bypass; iex ((New-Object System.Net.WebClient).DownloadStrin
 - Install git
 
 ```bash
-choco install -n git --params="'/NoAutoCrlf'"
-refreshenv
+git for windows
+-> no auto crlf
+-> add unix tools to path
 ```
 
 - Install [cygwin](https://www.cygwin.com/)
 - Install packages:
-    zsh curl wget vim
+    zsh curl wget
 
 ```bash
 # add cygwin to path
@@ -28,16 +29,18 @@ setx path "%path%;c:\cygwin64\bin"
 ```bash
 vim /etc/nsswitch.conf
 ```
-add "db_home: windows"
+then add "db_home: windows"
 
 - remove cygdrive prefix
 ```bash
 vim /etc/fstab
 ```
-change
+```
+then change
 "none /cygdrive cygdrive binary,posix=0,user 0 0"
 to
 "none / cygdrive binary 0 0"
+```
 
 ## Cmder
 
