@@ -1,1 +1,2 @@
-xlaunch -run ~/.xlaunch
+#!/bin/bash
+xlaunch -run ~/.xlaunch &

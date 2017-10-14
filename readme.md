@@ -47,9 +47,12 @@ to
 ## Install
 
 * Execute install.sh
-* Register xlaunch_startup.sh to launch on boot
-  windows10: 
-  -> group policy editor
-  -> scripts
-  -> startup
-  -> add
+* Register xlaunch_startup.sh to launch on boot (windows only)
+  -> task scheduler
+  -> new task
+  -> Run xlaunch_startup.sh on every startup
+
+  Example command:
+  ```
+  C:\cygwin64\bin\run.exe "C:\cygwin64\bin\bash.exe" -c "~/dotfiles/xlaunch_startup.sh"
+  ```
