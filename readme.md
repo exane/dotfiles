@@ -8,13 +8,18 @@ Set-ExecutionPolicy Bypass; iex ((New-Object System.Net.WebClient).DownloadStrin
 ```
 
 ## Dependencies
-- Install [cygwin](https://www.cygwin.com/)
-- Install packages:
-    zsh curl wget git
 
 ```bash
 # add cygwin to path
-setx path "%path%;c:\cygwin64\bin"
+setx path "%path%;c:\cygwin64\bin;c:\cygwin64"
+```
+
+- Download [cygwin](https://www.cygwin.com/)
+- Save setup-x86_64.exe in C:/cygwin64
+- Run default settings once
+- Install packages:
+```
+setup-x86_64 -qP git,zsh,curl,wget,vim,gvim,xinit,xorg-server,xlaunch,lua
 ```
 
 - Set home dir
@@ -31,14 +36,13 @@ vim /etc/fstab
 then change
 "none /cygdrive cygdrive binary,posix=0,user 0 0"
 to
-"none / cygdrive binary 0 0"
+"none / cygdrive binary,posix=0,user 0 0"
 ```
 
 ## Cmder
 
 - Install [cmder](https://github.com/cmderdev/cmder/releases)
 - Import settings from ./cmder/ConEmu.xml (in repo)
-
 
 ## Install
 
