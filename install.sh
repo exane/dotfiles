@@ -6,6 +6,8 @@
 
 ########## Variables
 # dotfiles directory"
+set -e
+
 dir="$HOME/dotfiles"
 
 # list of files/folders to symlink in homedir
@@ -45,6 +47,23 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
   fi
 done
+
+echo "Installing vim plugin manager Vundle..."
+if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
+  echo "downloading Vundle"
+  (
+    mkdir -p $HOME/.vim/bundle
+    cd $HOME/.vim/bundle
+    git clone https://github.com/VundleVim/Vundle.vim.git Vundle.vim
+  )
+  echo "Vundle plugin installed."
+else
+  echo "Vundle plugin already installed - skipping"
+fi
+
+echo "Installing vim plugins..."
+vim +PluginInstall +qall
+echo "Vim plugins installed"
 
 echo ""
 echo "Successfully installed dotfiles!"
