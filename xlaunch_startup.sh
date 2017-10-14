@@ -1,0 +1,1 @@
+xlaunch -run ~/.xlaunch

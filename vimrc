@@ -25,8 +25,7 @@ Plugin 'fatih/vim-go'
 if !has("win32unix") || has("gui_running")
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
-  " Plugin 'scrooloose/syntastic'
-  Plugin 'Valloric/YouCompleteMe'
+  Plugin 'shougo/neocomplete'
   Plugin 'w0rp/ale'
 endif
 Plugin 'tpope/vim-rails'
@@ -236,11 +235,11 @@ let g:go_fmt_autosave = 1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => YouCompleteMe
+" => NeoComplete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set completeopt-=preview
-let g:ycm_add_preview_to_completeopt=0
-let g:ycm_confirm_extra_conf=0
+" set completeopt-=preview
+" let g:ycm_add_preview_to_completeopt=0
+" let g:ycm_confirm_extra_conf=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CtrlP

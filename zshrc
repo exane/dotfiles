@@ -8,13 +8,14 @@ export ZSH=$HOME/.oh-my-zsh
 # windows stuff                                                                 #
 #################################################################################
 if [ $OSTYPE = "cygwin" ]; then
-  gvim() {
-    gvim.bat $(cygpath -w $@)
-  }
+  # gvim() {
+  #   gvim $(cygpath -w $@)
+  # }
+  export DISPLAY=:0.0
 
   export PATH="/c/cygwin64/bin:$PATH"
   export PATH="/y/Dropbox/Scripts:$PATH"
-  export PATH="/c/Program Files (x86)/vim/vim80/:$PATH"
+  # export PATH="/c/Program Files (x86)/vim/vim80/:$PATH"
   export PATH="/c/Program Files/Git/bin/:$PATH"
   export PATH="/c/Program Files/Git/cmd/:$PATH"
   export PATH="/c/Program Files/Git/cmd/:$PATH"
