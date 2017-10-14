@@ -15,9 +15,12 @@ files="vimrc zshrc gitconfig gitignore_global"
 
 echo "Installing oh-my-zsh..."
 
-if [ ! -d $HOME/.oh-my-zsh ]; then
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "downloading oh-my-zsh"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  (
+    cd $HOME
+    git clone git://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
+  )
   echo "oh-my-zsh installed."
 else
   echo "oh-my-zsh already installed - skipping"
