@@ -8,17 +8,9 @@ Set-ExecutionPolicy Bypass; iex ((New-Object System.Net.WebClient).DownloadStrin
 ```
 
 ## Dependencies
-- Install git
-
-```bash
-git for windows
--> no auto crlf
--> add unix tools to path
-```
-
 - Install [cygwin](https://www.cygwin.com/)
 - Install packages:
-    zsh curl wget
+    zsh curl wget git
 
 ```bash
 # add cygwin to path
