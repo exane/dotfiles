@@ -41,7 +41,7 @@ for file in $files; do
 done
 
 echo "Installing vim plugins..."
-vim +PluginInstall +qall
+PLUGIN_INSTALL=1 vim +PluginInstall +qall
 echo "Vim plugins installed"
 
 echo ""

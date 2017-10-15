@@ -22,7 +22,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim' 
 Plugin 'fatih/vim-go'
-if !has("win32unix") || has("gui_running")
+if $PLUGIN_INSTALL || !has("win32unix") || has("gui_running")
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
   Plugin 'shougo/neocomplete'
