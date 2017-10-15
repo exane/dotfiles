@@ -11,7 +11,7 @@ set -e
 dir="$HOME/dotfiles"
 
 # list of files/folders to symlink in homedir
-files="vimrc zshrc gitconfig gitignore_global xlaunch"
+files="vimrc zshrc gitconfig gitignore_global xwinrc"
 
 ##########
 

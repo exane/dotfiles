@@ -77,7 +77,9 @@ if has('gui_running')
   if has("gui_win32")
     " set guifont=UbuntuMonoDerivativePowerline_N:h12:cDEFAULT
     set guifont=Consolas:h10:cDEFAULT
-
+  elseif has("unix") && has("x11")
+    set guifont=Consolas\ 10
+    set linespace=4
   endif
 
   try
@@ -237,9 +239,27 @@ let g:go_fmt_autosave = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NeoComplete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set completeopt-=preview
-" let g:ycm_add_preview_to_completeopt=0
-" let g:ycm_confirm_extra_conf=0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ }
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <SPACE>: close completion
+inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType ruby setlocal omnifunc=rubycomplete#CompleteRuby
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CtrlP

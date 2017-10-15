@@ -8,20 +8,12 @@ export ZSH=$HOME/.oh-my-zsh
 # windows stuff                                                                 #
 #################################################################################
 if [ $OSTYPE = "cygwin" ]; then
-  # gvim() {
-  #   gvim $(cygpath -w $@)
-  # }
   export DISPLAY=:0.0
 
   export PATH="/c/cygwin64/bin:$PATH"
   export PATH="/y/Dropbox/Scripts:$PATH"
-  # export PATH="/c/Program Files (x86)/vim/vim80/:$PATH"
-  export PATH="/c/Program Files/Git/bin/:$PATH"
-  export PATH="/c/Program Files/Git/cmd/:$PATH"
-  export PATH="/c/Program Files/Git/cmd/:$PATH"
   export PATH="/c/Program Files/Oracle/VirtualBox:$PATH"
 
-  alias gvimdiff='gvimdiff.bat'
   alias docker-interface='(cd /c/Program\ Files/Docker\ Toolbox/ && start.sh)'
   alias open="cygstart"
 fi
@@ -58,7 +50,6 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
-export SSH_KEY_PATH="~/.ssh/id_rsa.ppk"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

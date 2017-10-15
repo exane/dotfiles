@@ -1,2 +1,2 @@
 #!/bin/bash
-xlaunch -run ~/.xlaunch &
+xlaunch -run ~/dotfiles/xlaunch.config
