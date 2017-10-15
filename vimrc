@@ -78,7 +78,7 @@ if has('gui_running')
     " set guifont=UbuntuMonoDerivativePowerline_N:h12:cDEFAULT
     set guifont=Consolas:h10:cDEFAULT
   elseif has("unix") && has("x11")
-    set guifont=Consolas\ 10
+    set guifont=Ubuntu\ Mono\ for\ Powerline\ 10
     set linespace=4
   endif
 
@@ -120,7 +120,7 @@ set nofoldenable
 set foldlevel=2
 
 " Non-case sensitive search
-set smartcase  
+set smartcase
 
 syntax enable
 let g:solarized_termcolors=256

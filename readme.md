@@ -47,7 +47,9 @@ to
 # Install
 
 * Execute install.sh
-* Register xlaunch_startup.sh to launch on boot (windows only)
+* (windows) Run powershell ~/.powerline-fonts/install.ps1
+* (unix) Run bash ~/.powerline-fonts/install.sh
+* (windows only) Register xlaunch_startup.sh to launch on boot
   -> task scheduler
   -> new task
   -> Run xlaunch_startup.sh on every startup

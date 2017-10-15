@@ -23,6 +23,14 @@ else
   echo "Oh-my-zsh already installed - skipping"
 fi
 
+if [ ! -d "$HOME/.powerline-fonts" ]; then
+  echo "Installing powerline-fonts..."
+  git clone git://github.com/powerline/fonts.git $HOME/.powerline-fonts
+  echo "powerline-fonts installed."
+else
+  echo "powerline-fonts already installed - skipping"
+fi
+
 if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
   echo "Installing vim plugin manager Vundle..."
   git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
