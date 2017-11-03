@@ -11,7 +11,10 @@ set -e
 dir="$HOME/dotfiles"
 
 # list of files/folders to symlink in homedir
-files="vimrc zshrc gitconfig gitignore_global xwinrc"
+files="vimrc zshrc gitconfig gitignore_global"
+
+# for cygwin: prefer cygwin binaries (especially git, because of path issues in git clone)
+PATH="/c/cygwin64/bin/:$PATH"
 
 ##########
 
@@ -23,13 +26,6 @@ else
   echo "Oh-my-zsh already installed - skipping"
 fi
 
-if [ ! -d "$HOME/.powerline-fonts" ]; then
-  echo "Installing powerline-fonts..."
-  git clone git://github.com/powerline/fonts.git $HOME/.powerline-fonts
-  echo "powerline-fonts installed."
-else
-  echo "powerline-fonts already installed - skipping"
-fi
 
 if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
   echo "Installing vim plugin manager Vundle..."
@@ -45,7 +41,13 @@ for file in $files; do
   rm $HOME/.$file || true
 
   echo "Creating symlink from $dir/$file to .$file in $HOME"
-  ln -s $dir/$file ~/.$file
+  if [ $OSTYPE == "cygwin" ]; then
+    cyg_dest=$(cygpath -w "$HOME/.$file")
+    cyg_target=$(cygpath -w "$dir/$file")
+    cmd /C "mklink /H $cyg_dest $cyg_target"
+  else
+    ln -s $dir/$file ~/.$file
+  fi
 done
 
 echo "Installing vim plugins..."

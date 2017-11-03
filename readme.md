@@ -1,3 +1,16 @@
+TODO:
+need git-for-windows for vim plugins
+need git (cygwin) for install process
+
+need vim (+gvim native windows) for actual usage
+need vim (cygwin) for install process (plugins)
+
+# Troubleshooting
+
+## which lua dll?
+:lua print("x")
+:echo has("lua")
+
 # Setup (windows only)
 
 ## Package Manager (chocolatey)

@@ -3,20 +3,24 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export PATH=/c/cygwin64/bin:$PATH
+export PATH=/y/Dropbox/Scripts:$PATH
+export PATH=/c/Program\ Files\ \(x86\)/vim/vim80/:$PATH
+export PATH=/c/Program\ Files/Git/bin/:$PATH
+export PATH=/c/Program\ Files/Git/cmd/:$PATH
+export PATH=/c/Program\ Files/Git/cmd/:$PATH
+export PATH="/c/Program Files/Oracle/VirtualBox:$PATH"
 
-#################################################################################
-# windows stuff                                                                 #
-#################################################################################
-if [ $OSTYPE = "cygwin" ]; then
-  export DISPLAY=:0.0
+gvim() {
+  gvim.bat $(cygpath -w $@)
+}
+alias gvimdiff='gvimdiff.bat'
 
-  export PATH="/c/cygwin64/bin:$PATH"
-  export PATH="/y/Dropbox/Scripts:$PATH"
-  export PATH="/c/Program Files/Oracle/VirtualBox:$PATH"
+alias docker="/y/htdocs/tim/web/dev-env/bin/docker-ssh.sh docker $*"
 
-  alias docker-interface='(cd /c/Program\ Files/Docker\ Toolbox/ && start.sh)'
-  alias open="cygstart"
-fi
+# load docker env
+: $(docker-machine env --shell dev 2> /dev/null)
+eval $("/c/Program Files/Docker Toolbox/docker-machine.exe" env --shell dev 2> /dev/null)
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -41,6 +45,8 @@ plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
+alias open="cygstart"
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -48,8 +54,16 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='gvim.bat'
+fi
+
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/id_rsa.ppk"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -59,3 +73,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# docker-interface
