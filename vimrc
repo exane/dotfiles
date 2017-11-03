@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+
 set shell=zsh
 filetype off
 if !has("win32unix")

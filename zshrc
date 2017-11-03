@@ -3,12 +3,11 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export PATH=/c/cygwin64/bin:$PATH
 export PATH=/y/Dropbox/Scripts:$PATH
+export PATH=/c/cygwin64/bin:$PATH
 export PATH=/c/Program\ Files\ \(x86\)/vim/vim80/:$PATH
+export PATH=/c/Program\ Files/Git/cmd/:$PATH
 export PATH=/c/Program\ Files/Git/bin/:$PATH
-export PATH=/c/Program\ Files/Git/cmd/:$PATH
-export PATH=/c/Program\ Files/Git/cmd/:$PATH
 export PATH="/c/Program Files/Oracle/VirtualBox:$PATH"
 
 gvim() {
