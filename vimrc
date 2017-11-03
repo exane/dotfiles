@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 
-set shell=zsh
+" why did I set shell to zsh? if enabled git-fugitive and ALE dont work anymore
+" set shell=zsh
 filetype off
 if !has("win32unix")
   let os=substitute(system('uname'), '\n', '', '')
