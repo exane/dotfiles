@@ -19,10 +19,10 @@ Plugin 'VundleVim/Vundle.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins here
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'tpope/vim-fugitive' 
+Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim' 
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 if $PLUGIN_INSTALL || !has("win32unix") || has("gui_running")
   Plugin 'vim-airline/vim-airline'
@@ -44,9 +44,10 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'Chiel92/vim-autoformat'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => No more Plugins 
+" => No more Plugins
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -93,7 +94,7 @@ if has('gui_running')
   " set encoding=utf-8
 else
   try
-    colorscheme solarized 
+    colorscheme solarized
   catch
   endtry
 endif
@@ -102,7 +103,7 @@ endif
 nmap <leader>r :source ~/.vimrc<CR>:edit<CR>
 
 " autoindent
-noremap <F7> gg=G``
+noremap <F7> :Autoformat<CR>
 
 " no swap files
 set noswapfile
@@ -139,23 +140,23 @@ let g:mapleader = ","
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " Line wrapping off
 set nowrap
 
 " don't need to show mode since we have airline
-set noshowmode 
+set noshowmode
 
 set numberwidth=4
 set encoding=utf-8
@@ -244,9 +245,9 @@ let g:go_fmt_autosave = 1
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ }
+      \ 'default' : '',
+      \ 'vimshell' : $HOME.'/.vimshell_hist',
+      \ }
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <SPACE>: close completion
@@ -278,7 +279,7 @@ map <space> :CtrlPLine<cr>
 " set autochdir
 " let NERDTreeChDirMode=2
 " nnoremap <leader>n :NERDTree .<CR>
-" let NERDTreeQuitOnOpen=1 
+" let NERDTreeQuitOnOpen=1
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
