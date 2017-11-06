@@ -306,5 +306,6 @@ autocmd FileType Vagrantfile setlocal commentstring=#\ %s
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ALE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ale_fixers = {}
 let g:ale_fixers.javascript = ["eslint"]
 let g:ale_fix_on_save = 1
