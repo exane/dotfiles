@@ -178,6 +178,12 @@ set number
 
 map <space> /
 
+" tab managment
+nmap <C-tab> gt
+nmap <C-S-tab> gT
+nmap <C-t> :tabedit %<cr>
+nmap <C-S-t> :tabclose<cr>
+
 inoremap <c-s> <Esc>:w!<cr>
 nnoremap :Q :q
 
