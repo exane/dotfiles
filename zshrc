@@ -15,11 +15,13 @@ gvim() {
 }
 alias gvimdiff='gvimdiff.bat'
 
-alias docker="/y/htdocs/tim/web/dev-env/bin/docker-ssh.sh docker $*"
+alias docker="~/web/dev-env/bin/docker-ssh.sh docker $*"
 
 # load docker env
 : $(docker-machine env --shell dev 2> /dev/null)
 eval $("/c/Program Files/Docker Toolbox/docker-machine.exe" env --shell dev 2> /dev/null)
+
+alias docker-start=". ~/web/dev-env/bin/docker-start.sh"  # this alias will start docker-machine
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
