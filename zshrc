@@ -10,12 +10,7 @@ export PATH=/c/Program\ Files/Git/cmd/:$PATH
 export PATH=/c/Program\ Files/Git/bin/:$PATH
 export PATH="/c/Program Files/Oracle/VirtualBox:$PATH"
 
-gvim() {
-  gvim.bat $(cygpath -w $@)
-}
-alias gvimdiff='gvimdiff.bat'
-
-alias docker="/y/htdocs/tim/web/dev-env/bin/docker-ssh.sh docker $*"
+alias docker="~/dev-env/bin/docker-ssh.sh docker $*"
 
 # load docker env
 : $(docker-machine env --shell dev 2> /dev/null)
@@ -42,9 +37,13 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git ssh-agent)
 
+export BOSH_CLIENT=admin
+export BOSH_CLIENT_SECRET=`bosh int ~/deployments/vbox/creds.yml --path /admin_password`
+export BOSH_ENVIRONMENT=vbox
+
 source $ZSH/oh-my-zsh.sh
 
-alias open="cygstart"
+# alias open="cygstart"
 
 # User configuration
 
