@@ -45,6 +45,8 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'jparise/vim-graphql'
+Plugin 'chr4/nginx.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => No more Plugins

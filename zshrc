@@ -16,6 +16,8 @@ alias docker="~/dev-env/bin/docker-ssh.sh docker $*"
 : $(docker-machine env --shell dev 2> /dev/null)
 eval $("/c/Program Files/Docker Toolbox/docker-machine.exe" env --shell dev 2> /dev/null)
 
+alias docker-start=". ~/web/dev-env/bin/docker-start.sh"  # this alias will start docker-machine
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
