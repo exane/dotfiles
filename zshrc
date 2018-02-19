@@ -3,7 +3,6 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export PATH=/y/Dropbox/Scripts:$PATH
 export PATH=/c/cygwin64/bin:$PATH
 export PATH=/c/Program\ Files\ \(x86\)/vim/vim80/:$PATH
 export PATH=/c/Program\ Files/Git/cmd/:$PATH
@@ -11,12 +10,6 @@ export PATH=/c/Program\ Files/Git/bin/:$PATH
 export PATH="/c/Program Files/Oracle/VirtualBox:$PATH"
 
 alias docker="~/dev-env/bin/docker-ssh.sh docker $*"
-
-# load docker env
-: $(docker-machine env --shell dev 2> /dev/null)
-eval $("/c/Program Files/Docker Toolbox/docker-machine.exe" env --shell dev 2> /dev/null)
-
-alias docker-start=". ~/web/dev-env/bin/docker-start.sh"  # this alias will start docker-machine
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
