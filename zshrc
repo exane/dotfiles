@@ -9,7 +9,7 @@ export PATH=/c/Program\ Files/Git/cmd/:$PATH
 export PATH=/c/Program\ Files/Git/bin/:$PATH
 export PATH="/c/Program Files/Oracle/VirtualBox:$PATH"
 
-alias docker="~/dev-env/bin/docker-ssh.sh docker $*"
+alias docker="~/dev-env/bin/docker-dev.sh docker $*"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
