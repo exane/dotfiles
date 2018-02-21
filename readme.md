@@ -1,17 +1,8 @@
-TODO:
-need git-for-windows for vim plugins
-need git (cygwin) for install process
-
-need vim (+gvim native windows) for actual usage
-need vim (cygwin) for install process (plugins)
-
-# Troubleshooting
-
-## which lua dll?
-:lua print("x")
-:echo has("lua")
-
 # Setup (windows only)
+
+## Gvim
+- [Gvim download](https://github.com/vim/vim-win32-installer)
+- For dynamic interface libraries like lua, download the dll and put it into your PATH or alongside gvim.exe
 
 ## Package Manager (chocolatey)
 - powershell:
@@ -21,6 +12,11 @@ Set-ExecutionPolicy Bypass; iex ((New-Object System.Net.WebClient).DownloadStrin
 ```
 
 ## Dependencies
+
+need git-for-windows for gvim usage
+need git (cygwin) for using zsh
+need vim (cygwin) for install process (plugins)
+
 
 ```bash
 # add cygwin to path
@@ -32,7 +28,7 @@ setx path "%path%;c:\cygwin64\bin;c:\cygwin64"
 - Run default settings once
 - Install packages:
 ```
-setup-x86_64 -qP git,zsh,curl,wget,vim,gvim,xinit,xorg-server,xlaunch,lua
+setup-x86_64 -qP git,zsh,curl,wget,vim
 ```
 
 - Set home dir
@@ -57,17 +53,12 @@ to
 - Install [cmder](https://github.com/cmderdev/cmder/releases)
 - Import settings from ./cmder/ConEmu.xml (in repo)
 
-# Install
+# Install (Any Platform)
 
 * Execute install.sh
-* (windows) Run powershell ~/.powerline-fonts/install.ps1
-* (unix) Run bash ~/.powerline-fonts/install.sh
-* (windows only) Register xlaunch_startup.sh to launch on boot
-  -> task scheduler
-  -> new task
-  -> Run xlaunch_startup.sh on every startup
 
-  Example command:
-  ```
-  C:\cygwin64\bin\run.exe "C:\cygwin64\bin\bash.exe" -c "~/dotfiles/xlaunch_startup.sh"
-  ```
+# Troubleshooting
+## which lua dll?
+:lua print("x")
+:echo has("lua")
+
