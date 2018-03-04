@@ -3,12 +3,22 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export PATH=/c/cygwin64/bin:$PATH
-export PATH=/c/Program\ Files\ \(x86\)/vim/vim80/:$PATH
-export PATH=/c/Program\ Files/Git/cmd/:$PATH
-export PATH=/c/Program\ Files/Git/bin/:$PATH
-export PATH="/c/Program Files/Oracle/VirtualBox:$PATH"
 
+if [[ $OSTYPE == "cygwin" ]]; then
+  export PATH=/c/cygwin64/bin:$PATH
+  export PATH=/c/Program\ Files\ \(x86\)/vim/vim80/:$PATH
+  export PATH=/c/Program\ Files/Git/cmd/:$PATH
+  export PATH=/c/Program\ Files/Git/bin/:$PATH
+
+  alias gvimdiff='gvimdiff.bat'
+  # alias mix='docker dev -- mix'
+
+  gvim() {
+    gvim.bat $(cygpath -w $@)
+  }
+
+  alias open="cygstart"
+fi
 alias docker="~/dev-env/bin/docker-dev.sh docker $*"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -38,8 +48,6 @@ export BOSH_ENVIRONMENT=vbox
 
 source $ZSH/oh-my-zsh.sh
 
-# alias open="cygstart"
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -66,5 +74,3 @@ export SSH_KEY_PATH="~/.ssh/id_rsa.ppk"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# docker-interface
