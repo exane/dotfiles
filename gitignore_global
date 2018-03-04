@@ -6,4 +6,4 @@ Vagrantfile
 env
 .byebug_history
 node_modules
-.DS_STORE
+.DS_Store
