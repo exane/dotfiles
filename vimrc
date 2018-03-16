@@ -29,6 +29,7 @@ if $PLUGIN_INSTALL || !has("win32unix") || has("gui_running")
   Plugin 'vim-airline/vim-airline-themes'
   Plugin 'shougo/neocomplete'
   Plugin 'w0rp/ale'
+  Plugin 'Yggdroot/indentLine'
 endif
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
