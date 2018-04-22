@@ -17,6 +17,18 @@ if [[ $OSTYPE == "cygwin" ]]; then
     gvim.bat $(cygpath -w $@)
   }
 
+  hyperv-enable () {
+    echo "Enabling Hyper-V..."
+    bcdedit /set hypervisorlaunchtype auto
+    echo "Restart needed to complete."
+  }
+
+  hyperv-disable () {
+    echo "Disabling Hyper-V..."
+    bcdedit /set hypervisorlaunchtype off
+    echo "Restart needed to complete."
+  }
+
   alias open="cygstart"
 fi
 alias docker="~/dev-env/bin/docker-dev.sh docker $*"
