@@ -32,10 +32,15 @@ if [[ $OSTYPE == "cygwin" ]]; then
 fi
 
 if [[ $(uname) = "Darwin" ]]; then
-  export BOSH_CLIENT=admin
-  export BOSH_CLIENT_SECRET=`bosh int ~/deployments/vbox/creds.yml --path /admin_password`
-  export BOSH_ENVIRONMENT=vbox
-  export BOSH_LITE_PATH="~/deployments/vbox/"
+  if [[ -f ~/deloyments ]]; then
+    export BOSH_CLIENT=admin
+    export BOSH_CLIENT_SECRET=`bosh int ~/deployments/vbox/creds.yml --path /admin_password`
+    export BOSH_ENVIRONMENT=vbox
+    export BOSH_LITE_PATH="~/deployments/vbox/"
+  fi
+
+  export ANDROID_HOME=~/Library/Android/sdk
+  export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
 fi
 
 alias docker="~/dev-env/bin/docker-dev.sh docker $*"
