@@ -11,14 +11,33 @@ if [[ $OSTYPE == "cygwin" ]]; then
   export PATH=/c/Program\ Files/Git/bin/:$PATH
 
   alias gvimdiff='gvimdiff.bat'
-  # alias mix='docker dev -- mix'
 
   gvim() {
     gvim.bat $(cygpath -w $@)
   }
 
+  hyperv-enable () {
+    echo "Enabling Hyper-V..."
+    bcdedit /set hypervisorlaunchtype auto
+    echo "Restart needed to complete."
+  }
+
+  hyperv-disable () {
+    echo "Disabling Hyper-V..."
+    bcdedit /set hypervisorlaunchtype off
+    echo "Restart needed to complete."
+  }
+
   alias open="cygstart"
 fi
+
+if [[ $(uname) = "Darwin" ]]; then
+  export BOSH_CLIENT=admin
+  export BOSH_CLIENT_SECRET=`bosh int ~/deployments/vbox/creds.yml --path /admin_password`
+  export BOSH_ENVIRONMENT=vbox
+  export BOSH_LITE_PATH="~/deployments/vbox/"
+fi
+
 alias docker="~/dev-env/bin/docker-dev.sh docker $*"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -42,11 +61,6 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git ssh-agent)
 
-export BOSH_CLIENT=admin
-export BOSH_CLIENT_SECRET=`bosh int ~/deployments/vbox/creds.yml --path /admin_password`
-export BOSH_ENVIRONMENT=vbox
-export BOSH_LITE_PATH="~/deployments/vbox/"
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -62,16 +76,3 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='gvim.bat'
 fi
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-export SSH_KEY_PATH="~/.ssh/id_rsa.ppk"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
