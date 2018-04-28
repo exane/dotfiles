@@ -13,7 +13,11 @@ if [[ $OSTYPE == "cygwin" ]]; then
   alias gvimdiff='gvimdiff.bat'
 
   gvim() {
-    gvim.bat $(cygpath -w $@)
+    if [[ -z $@ ]]; then
+      gvim.bat
+    else
+      gvim.bat $(cygpath -w $@)
+    fi
   }
 
   hyperv-enable () {
