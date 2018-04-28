@@ -48,6 +48,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'jparise/vim-graphql'
 Plugin 'chr4/nginx.vim'
+Plugin 'tpope/vim-obsession'
+Plugin 'dhruvasagar/vim-prosession'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => No more Plugins
