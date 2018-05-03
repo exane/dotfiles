@@ -5,10 +5,10 @@
 export ZSH=$HOME/.oh-my-zsh
 
 if [[ $OSTYPE == "cygwin" ]]; then
-  export PATH=/c/cygwin64/bin:$PATH
-  export PATH=/c/Program\ Files\ \(x86\)/vim/vim80/:$PATH
-  export PATH=/c/Program\ Files/Git/cmd/:$PATH
-  export PATH=/c/Program\ Files/Git/bin/:$PATH
+  export PATH=/cygdrive/c/cygwin64/bin:$PATH
+  export PATH=/cygdrive/c/Program\ Files\ \(x86\)/vim/vim80/:$PATH
+  export PATH=/cygdrive/c/Program\ Files/Git/cmd/:$PATH
+  export PATH=/cygdrive/c/Program\ Files/Git/bin/:$PATH
 
   alias gvimdiff='gvimdiff.bat'
 

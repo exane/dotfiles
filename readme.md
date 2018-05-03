@@ -37,17 +37,6 @@ vim /etc/nsswitch.conf
 ```
 then add "db_home: windows"
 
-- remove cygdrive prefix
-```bash
-vim /etc/fstab
-```
-```
-then change
-"none /cygdrive cygdrive binary,posix=0,user 0 0"
-to
-"none / cygdrive binary,posix=0,user 0 0"
-```
-
 ## Cmder
 
 - Install [cmder](https://github.com/cmderdev/cmder/releases)
