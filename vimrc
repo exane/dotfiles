@@ -50,6 +50,7 @@ Plugin 'jparise/vim-graphql'
 Plugin 'chr4/nginx.vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
+Plugin 'terryma/vim-multiple-cursors'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => No more Plugins
