@@ -30,12 +30,14 @@ if $PLUGIN_INSTALL || !has("win32unix") || has("gui_running")
   Plugin 'shougo/neocomplete'
   Plugin 'w0rp/ale'
   Plugin 'Yggdroot/indentLine'
+  Plugin 'ludovicchabant/vim-gutentags'
+  Plugin 'majutsushi/tagbar'
 endif
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'alvan/vim-closetag'
-" Plugin 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-commentary'
 Plugin 'pangloss/vim-javascript'
@@ -50,7 +52,6 @@ Plugin 'jparise/vim-graphql'
 Plugin 'chr4/nginx.vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
-Plugin 'terryma/vim-multiple-cursors'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => No more Plugins
@@ -321,3 +322,10 @@ autocmd FileType Vagrantfile setlocal commentstring=#\ %s
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = ["eslint"]
 let g:ale_fix_on_save = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ctags
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" go-to
+nmap gt <C-]>
+map <F8> :TagbarToggle<CR>

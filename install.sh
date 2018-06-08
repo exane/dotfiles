@@ -49,6 +49,17 @@ for file in $files; do
   fi
 done
 
+# Generating ctags
+ctags_dest="$HOME/.ctags"
+echo Removing $ctags_dest
+rm $ctags_dest || true
+for ctag in ctags/*; do
+  echo Merging $ctag in to $ctags_dest
+  cat $ctag >> $ctags_dest
+done
+echo ctags generation done
+
+# Installing vim plugins
 echo "Installing vim plugins..."
 PLUGIN_INSTALL=1 vim +PluginInstall +qall
 echo "Vim plugins installed"
