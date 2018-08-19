@@ -7,3 +7,4 @@ env
 .byebug_history
 node_modules
 .DS_Store
+*~
