@@ -281,7 +281,8 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:ctrlp_map = '<space>'
 let g:ctrlp_extensions = ['line', 'dir']
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|vendor'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|vendor\|_build\|.git$'
+let g:ctrlp_show_hidden = 1
 map <leader><space> :CtrlP<cr>
 map <space> :CtrlPLine<cr>
 
