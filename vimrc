@@ -283,6 +283,16 @@ endif
 let g:ctrlp_extensions = ['line', 'dir']
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|vendor\|_build\|.git$'
 let g:ctrlp_show_hidden = 1
+" 'c' - the directory of the current file.
+" 'r' - the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr _darcs
+" 'a' - like c, but only if the current working directory outside of CtrlP is not a direct ancestor of 
+"       the directory of the current file.
+" 'w' - begin finding a root from the current working directory outside of CtrlP
+"       instead of from the directory of the current file (default). Only applies
+"       when 'r' is also present.
+" 0 or '' (empty string) - disable this feature.
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_root_markers = ['.ctrlp']
 map <leader><space> :CtrlP<cr>
 map <space> :CtrlPLine<cr>
 
@@ -299,6 +309,12 @@ map <space> :CtrlPLine<cr>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeIgnore = ['\.swp$', '\.swo$']
+
+" If the option is set to 2 then it behaves the same as if set to 1 except that
+" the CWD is changed whenever the tree root is changed. For example, if the CWD
+" is /home/marty/foobar and you make the node for /home/marty/foobar/baz the new
+" root then the CWD will become /home/marty/foobar/baz.
+" let g:NERDTreeChDirMode = 2
 map <leader>e :NERDTreeToggle<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
