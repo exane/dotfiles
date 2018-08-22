@@ -14,7 +14,7 @@ dir="$HOME/dotfiles"
 files="eslintrc vimrc zshrc gitconfig gitignore_global"
 
 # for cygwin: prefer cygwin binaries (especially git, because of path issues in git clone)
-PATH="/c/cygwin64/bin/:$PATH"
+export PATH="/cygdrive/c/cygwin64/bin/:$PATH"
 
 ##########
 
