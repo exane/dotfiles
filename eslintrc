@@ -30,7 +30,8 @@
     "object-shorthand": "error",
     "no-return-await": "error",
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0, "maxBOF": 0 }],
-    "no-console": "off"
+    "no-console": "off",
+    "no-debugger": "off",
   },
   "plugins": [
     "react"

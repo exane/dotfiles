@@ -35,7 +35,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'alvan/vim-closetag'
-" Plugin 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-commentary'
 Plugin 'pangloss/vim-javascript'
@@ -50,7 +50,7 @@ Plugin 'jparise/vim-graphql'
 Plugin 'chr4/nginx.vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
-Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'terryma/vim-multiple-cursors'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => No more Plugins
