@@ -231,6 +231,7 @@ set list
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='solarized'
 let g:airline_theme='dark'
+let g:airline_section_z = ''
 set laststatus=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -281,7 +282,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:ctrlp_map = '<space>'
 let g:ctrlp_extensions = ['line', 'dir']
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|vendor\|_build\|.git$'
+let g:ctrlp_custom_ignore = 'deps\|node_modules\|DS_Store\|vendor\|_build\|.git$'
 let g:ctrlp_show_hidden = 1
 " 'c' - the directory of the current file.
 " 'r' - the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr _darcs
