@@ -182,6 +182,9 @@ set wrap "Wrap lines
 
 set number
 
+set fileformat=unix
+set fileformats=unix,dos
+
 map <space> /
 
 " tab managment
