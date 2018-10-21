@@ -1,22 +1,20 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
 if [[ $OSTYPE == "cygwin" ]]; then
-  export PATH=/cygdrive/c/cygwin64/bin:$PATH
-  export PATH=/cygdrive/c/Program\ Files\ \(x86\)/vim/vim80/:$PATH
-  export PATH=/cygdrive/c/Program\ Files/Git/cmd/:$PATH
-  export PATH=/cygdrive/c/Program\ Files/Git/bin/:$PATH
+  export PATH="/cygdrive/c/Program Files (x86)/vim/vim80:$PATH"
+  export PATH="/cygdrive/c/cygwin64/bin:$PATH"
 
   alias gvimdiff='gvimdiff.bat'
+  alias mix=mix.bat
 
   gvim() {
+    local PATH="/cygdrive/c/Program Files/Git/bin:$PATH"
+    local PATH="/cygdrive/c/Program Files/Git/cmd:$PATH"
+
     if [[ -z $@ ]]; then
-      gvim.bat
+      PATH=$PATH gvim.bat
     else
-      gvim.bat $(cygpath -w $@)
+      PATH=$PATH gvim.bat $(cygpath -w $@)
     fi
   }
 
@@ -71,17 +69,3 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='gvim.bat'
-fi
