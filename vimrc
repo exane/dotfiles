@@ -221,6 +221,10 @@ inoremap <S-Tab> <C-D>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
+" remove command history and ex-mode
+noremap q: :q
+noremap Q: :q
+
 " jump back to last line
 nnoremap <BS> ``
 
@@ -339,6 +343,18 @@ autocmd FileType Vagrantfile setlocal commentstring=#\ %s
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ALE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_fixers = {}
-let g:ale_fixers.javascript = ["eslint"]
 let g:ale_fix_on_save = 1
+let g:ale_linters = {}
+let g:ale_fixers = {
+  \'*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
+" let g:ale_completion_enabled = 1
+
+" JS
+let g:ale_fixers.javascript = ["eslint", 'remove_trailing_lines', 'trim_whitespace']
+
+" Elixir
+let g:ale_fixers.elixir = ['mix_format', 'remove_trailing_lines', 'trim_whitespace']
+let g:ale_linters.elixir = []
+" let g:ale_linters.elixir = ['elixir-ls']
+" let g:ale_elixir_elixir_ls_release = '~/.vim/elixir-ls/rel'
