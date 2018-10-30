@@ -47,6 +47,10 @@ if [[ $(uname) = "Darwin" ]]; then
   export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
 fi
 
+if [[ -d "$HOME/.rvm" ]]; then
+  source "$HOME/.rvm/scripts/rvm"
+fi
+
 alias docker="~/dev-env/bin/docker-dev.sh docker $*"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
