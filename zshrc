@@ -1,3 +1,4 @@
+#!/bin/bash
 export ZSH=$HOME/.oh-my-zsh
 
 if [[ $OSTYPE == "cygwin" ]]; then

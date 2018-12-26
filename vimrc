@@ -1,3 +1,4 @@
+" code: lang=viml
 set nocompatible              " be iMproved, required
 
 " why did I set shell to zsh? if enabled git-fugitive and ALE dont work anymore
@@ -293,7 +294,7 @@ let g:ctrlp_custom_ignore = 'deps\|node_modules\|DS_Store\|vendor\|_build\|.git$
 let g:ctrlp_show_hidden = 1
 " 'c' - the directory of the current file.
 " 'r' - the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr _darcs
-" 'a' - like c, but only if the current working directory outside of CtrlP is not a direct ancestor of 
+" 'a' - like c, but only if the current working directory outside of CtrlP is not a direct ancestor of
 "       the directory of the current file.
 " 'w' - begin finding a root from the current working directory outside of CtrlP
 "       instead of from the directory of the current file (default). Only applies
