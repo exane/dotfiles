@@ -37,7 +37,7 @@ if [[ $OSTYPE == "cygwin" ]]; then
   : $(docker-machine env --shell dev 2> /dev/null)
   eval $("/cygdrive/c/Program Files/Docker Toolbox/docker-machine.exe" env --shell dev 2> /dev/null)
 
-  alias docker-start=". ~/web/dev-env/bin/docker-start.sh"  # this alias will start docker-machine
+  alias docker-start=". ~/dev-env/bin/docker-start.sh"  # this alias will start docker-machine
 fi
 
 if [[ $(uname) = "Darwin" ]]; then
