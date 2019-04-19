@@ -32,6 +32,12 @@ if [[ $OSTYPE == "cygwin" ]]; then
   }
 
   alias open="cygstart"
+
+  # load docker env
+  : $(docker-machine env --shell dev 2> /dev/null)
+  eval $("/cygdrive/c/Program Files/Docker Toolbox/docker-machine.exe" env --shell dev 2> /dev/null)
+
+  alias docker-start=". ~/web/dev-env/bin/docker-start.sh"  # this alias will start docker-machine
 fi
 
 if [[ $(uname) = "Darwin" ]]; then
@@ -44,10 +50,6 @@ if [[ $(uname) = "Darwin" ]]; then
 
   export ANDROID_HOME=~/Library/Android/sdk
   export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
-fi
-
-if [[ -d "$HOME/.rvm" ]]; then
-  source "$HOME/.rvm/scripts/rvm"
 fi
 
 alias docker="~/dev-env/bin/docker-dev.sh docker $*"
