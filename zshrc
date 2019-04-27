@@ -3,7 +3,9 @@ export ZSH=$HOME/.oh-my-zsh
 
 if [[ $OSTYPE == "cygwin" ]]; then
   export PATH="/cygdrive/c/Program Files (x86)/vim/vim80:$PATH"
+  export PATH="/cygdrive/c/Users/Tim/.rvm/:$PATH"
   export PATH="/cygdrive/c/cygwin64/bin:$PATH"
+  export PATH="/cygdrive/y/Program Files/Oracle/VirtualBox:$PATH"
 
   alias gvimdiff='gvimdiff.bat'
   alias mix=mix.bat
@@ -38,6 +40,9 @@ if [[ $OSTYPE == "cygwin" ]]; then
   eval $("/cygdrive/c/Program Files/Docker Toolbox/docker-machine.exe" env --shell dev 2> /dev/null)
 
   alias docker-start=". ~/dev-env/bin/docker-start.sh"  # this alias will start docker-machine
+
+  # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+  export PATH="$PATH:$HOME/.rvm/bin"
 fi
 
 if [[ $(uname) = "Darwin" ]]; then
