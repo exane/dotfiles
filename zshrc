@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 export ZSH=$HOME/.oh-my-zsh
 
 if [[ $OSTYPE == "cygwin" ]]; then
@@ -39,11 +39,9 @@ if [[ $OSTYPE == "cygwin" ]]; then
   # alias docker-start=". ~/dev-env/bin/docker-start.sh"  # this alias will start docker-machine
 
   # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-  rvm() {
-    # export PATH="$PATH:$HOME/.rvm/"
+  rvm-load() {
     export PATH="$PATH:$HOME/.rvm/bin"
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-    unset -f rvm && rvm
   }
 fi
 
