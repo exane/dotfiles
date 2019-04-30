@@ -11,7 +11,8 @@ set -e
 dir="$HOME/dotfiles"
 
 # list of files/folders to symlink in homedir
-files="eslintrc vimrc zshrc gitconfig gitignore_global"
+files_to_symlink="eslintrc vimrc zshrc gitignore_global"
+files_to_copy="gitconfig"
 
 # for cygwin: prefer cygwin binaries (especially git, because of path issues in git clone)
 export PATH="/cygdrive/c/cygwin64/bin/:$PATH"
@@ -35,7 +36,7 @@ else
 fi
 
 # create symlinks from every file in $files into $HOME directory
-for file in $files; do
+for file in $files_to_symlink; do
   echo "Remove .$file from $HOME"
   rm $HOME/.$file || true
 
@@ -47,6 +48,22 @@ for file in $files; do
   else
     ln -s $dir/$file ~/.$file
   fi
+done
+
+mkdir -p $HOME/dotfiles_old
+for file in $files_to_copy; do
+  d=$(date +%F)
+  backup_file=".$file-$d"
+  backup_dest="$HOME/dotfiles_old/$backup_file"
+  dest="$HOME/.$file"
+
+  if [ -f $dest ]; then
+    echo "Backup file to $backup_dest"
+    cp $dest $backup_dest
+  fi
+
+  echo "Copying .$file to $HOME"
+  cp $file $HOME/.$file
 done
 
 echo "Installing vim plugins..."

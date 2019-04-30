@@ -43,10 +43,14 @@ if [[ $(uname) = "Darwin" ]]; then
 
   export ANDROID_HOME=~/Library/Android/sdk
   export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
-fi
 
-if [[ -d "$HOME/.rvm" ]]; then
-  source "$HOME/.rvm/scripts/rvm"
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  alias be="bundle exec"
+  export PATH="/usr/local/opt/curl/bin:$PATH"
+
+  # added by travis gem
+  [ -f /Users/Tim/.travis/travis.sh ] && source /Users/Tim/.travis/travis.sh
 fi
 
 alias docker="~/dev-env/bin/docker-dev.sh docker $*"
