@@ -1,11 +1,14 @@
+#!/bin/zsh
 export ZSH=$HOME/.oh-my-zsh
 
 if [[ $OSTYPE == "cygwin" ]]; then
   export PATH="/cygdrive/c/Program Files (x86)/vim/vim80:$PATH"
   export PATH="/cygdrive/c/cygwin64/bin:$PATH"
+  export PATH="/cygdrive/y/Program Files/Oracle/VirtualBox:$PATH"
 
-  alias gvimdiff='gvimdiff.bat'
-  alias mix=mix.bat
+  alias gvimdiff="gvimdiff.bat"
+  alias mix="mix.bat"
+  alias open="cygstart"
 
   gvim() {
     local PATH="/cygdrive/c/Program Files/Git/bin:$PATH"
@@ -30,7 +33,16 @@ if [[ $OSTYPE == "cygwin" ]]; then
     echo "Restart needed to complete."
   }
 
-  alias open="cygstart"
+  # load docker env
+  # : $(docker-machine env --shell dev 2> /dev/null)
+  # eval $("/cygdrive/c/Program Files/Docker Toolbox/docker-machine.exe" env --shell dev 2> /dev/null)
+  # alias docker-start=". ~/dev-env/bin/docker-start.sh"  # this alias will start docker-machine
+
+  # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+  rvm-load() {
+    export PATH="$PATH:$HOME/.rvm/bin"
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+  }
 fi
 
 if [[ $(uname) = "Darwin" ]]; then
@@ -53,7 +65,7 @@ if [[ $(uname) = "Darwin" ]]; then
   [ -f /Users/Tim/.travis/travis.sh ] && source /Users/Tim/.travis/travis.sh
 fi
 
-alias docker="~/dev-env/bin/docker-dev.sh docker $*"
+alias docker="$HOME/dev-env/bin/docker-dev.sh docker $*"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
