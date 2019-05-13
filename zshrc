@@ -3,7 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 if [[ $OSTYPE == "cygwin" ]]; then
   export PATH="/cygdrive/c/Program Files (x86)/vim/vim80:$PATH"
-  # export PATH="/cygdrive/c/cygwin64/bin:$PATH"
+  export PATH="/usr/bin:$PATH"
   export PATH="/cygdrive/y/Program Files/Oracle/VirtualBox:$PATH"
 
   alias gvimdiff="gvimdiff.bat"
