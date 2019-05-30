@@ -65,6 +65,7 @@ if [[ $(uname) = "Darwin" ]]; then
 fi
 
 alias docker="$HOME/dev-env/bin/docker-dev.sh docker $*"
+alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}"'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
