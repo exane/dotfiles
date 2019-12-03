@@ -59,7 +59,9 @@ if [[ $(uname) = "Darwin" ]]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
   alias be="bundle exec"
+  alias cf="$HOME/dotfiles/cf_wrapper.sh cf $*"
   export PATH="/usr/local/opt/curl/bin:$PATH"
+  export LC_ALL=en_US.UTF-8
 
   # added by travis gem
   [ -f /Users/Tim/.travis/travis.sh ] && source /Users/Tim/.travis/travis.sh
