@@ -3,7 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 if [[ $OSTYPE == "cygwin" ]]; then
   export PATH="/cygdrive/c/Program Files (x86)/vim/vim80:$PATH"
-  export PATH="/cygdrive/c/cygwin64/bin:$PATH"
+  export PATH="/usr/bin:$PATH"
   export PATH="/cygdrive/y/Program Files/Oracle/VirtualBox:$PATH"
 
   alias gvimdiff="gvimdiff.bat"
@@ -33,16 +33,15 @@ if [[ $OSTYPE == "cygwin" ]]; then
     echo "Restart needed to complete."
   }
 
-  # load docker env
+  # Cmder new tab in same working directory
+  # https://conemu.github.io/en/ShellWorkDir.html
+  set_conemu_cwd() { ConEmuC -StoreCWD }
+  precmd_functions+=set_conemu_cwd
+
+  # load docker env (should be in global env vars)
   # : $(docker-machine env --shell dev 2> /dev/null)
   # eval $("/cygdrive/c/Program Files/Docker Toolbox/docker-machine.exe" env --shell dev 2> /dev/null)
   # alias docker-start=". ~/dev-env/bin/docker-start.sh"  # this alias will start docker-machine
-
-  # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-  rvm-load() {
-    export PATH="$PATH:$HOME/.rvm/bin"
-    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-  }
 fi
 
 if [[ $(uname) = "Darwin" ]]; then
@@ -68,6 +67,7 @@ if [[ $(uname) = "Darwin" ]]; then
 fi
 
 alias docker="$HOME/dev-env/bin/docker-dev.sh docker $*"
+alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}"'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
