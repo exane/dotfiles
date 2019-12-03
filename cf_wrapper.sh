@@ -1,7 +1,5 @@
 
 #!/bin/bash
-#cf ssh fancy-vacations-staging  -t -c '/tmp/lifecycle/launcher /home/vcap/app/ "rails c" ""'
-
 
 # Get the actual command to be called
 command="$1"
