@@ -69,6 +69,8 @@ fi
 alias docker="$HOME/dev-env/bin/docker-dev.sh docker $*"
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}"'
 
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
