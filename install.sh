@@ -11,7 +11,7 @@ set -e
 dir="$HOME/dotfiles"
 
 # list of files/folders to symlink in homedir
-files_to_symlink="eslintrc vimrc zshrc gitignore_global"
+files_to_symlink="eslintrc vimrc zshrc gitignore_global iex.exs"
 files_to_copy="gitconfig"
 
 # for cygwin: prefer cygwin binaries (especially git, because of path issues in git clone)
