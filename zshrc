@@ -53,7 +53,8 @@ if [[ $(uname) = "Darwin" ]]; then
   fi
 
   export ANDROID_HOME=~/Library/Android/sdk
-  export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
+  export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
+  export PATH="/usr/local/bin:$PATH"
 
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
