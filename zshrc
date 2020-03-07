@@ -1,6 +1,9 @@
 #!/bin/zsh
 export ZSH=$HOME/.oh-my-zsh
 
+if [[ $(uname) = "Linux" ]]; then
+fi
+
 if [[ $OSTYPE == "cygwin" ]]; then
   export PATH="/cygdrive/c/Program Files (x86)/vim/vim80:$PATH"
   export PATH="/usr/bin:$PATH"
@@ -94,3 +97,7 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
+
+if [[ $WSL_DISTRO_NAME ]]; then
+  PS1="[WSL]$PS1"
+fi
