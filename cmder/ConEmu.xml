@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2019-04-27 14:12:32" build="180206">
-			<value name="StartType" type="hex" data="00"/>
+		<key name=".Vanilla" modified="2019-05-22 19:35:31" build="180206">
+			<value name="StartType" type="hex" data="03"/>
 			<value name="CmdLine" type="string" data=""/>
 			<value name="StartTasksFile" type="string" data=""/>
 			<value name="StartTasksName" type="string" data="{zsh}"/>
@@ -99,7 +99,6 @@
 			<value name="CmdLineHistory" type="multi">
 				<line data="{zsh::admin}"/>
 				<line data="{zsh::default}"/>
-				<line data="{zsh}"/>
 			</value>
 			<value name="SingleInstance" type="hex" data="00"/>
 			<value name="ShowHelpTooltips" type="hex" data="01"/>
@@ -155,11 +154,11 @@
 			<value name="Cascaded" type="hex" data="01"/>
 			<value name="IntegralSize" type="hex" data="00"/>
 			<value name="WindowMode" type="dword" data="0000051f"/>
-			<value name="ConWnd X" type="long" data="90"/>
-			<value name="ConWnd Y" type="long" data="0"/>
+			<value name="ConWnd X" type="long" data="274"/>
+			<value name="ConWnd Y" type="long" data="191"/>
 			<value name="LastMonitor" type="string" data="69,0,3440,1440"/>
-			<value name="ConWnd Width" type="dword" data="00000082"/>
-			<value name="ConWnd Height" type="dword" data="0000004f"/>
+			<value name="ConWnd Width" type="dword" data="0000006e"/>
+			<value name="ConWnd Height" type="dword" data="0000003f"/>
 			<value name="16bit Height" type="ulong" data="0"/>
 			<value name="QuakeStyle" type="hex" data="00"/>
 			<value name="Restore2ActiveMon" type="hex" data="00"/>
@@ -600,14 +599,14 @@
 			</key>
 			<key name="Tasks" modified="2019-04-27 14:12:32" build="180206">
 				<value name="Count" type="long" data="15"/>
-				<key name="Task1" modified="2019-04-27 14:12:32" build="180206">
+				<key name="Task1" modified="2019-05-22 19:35:31" build="180206">
 					<value name="Name" type="string" data="{zsh::default}"/>
 					<value name="Flags" type="dword" data="00000007"/>
-					<value name="Hotkey" type="dword" data="00000000"/>
-					<value name="GuiArgs" type="string" data='/dir "C:\Users\Tim"'/>
+					<value name="Hotkey" type="dword" data="00001154"/>
+					<value name="GuiArgs" type="string" data=""/>
 					<value name="Active" type="long" data="0"/>
 					<value name="Count" type="long" data="1"/>
-					<value name="Cmd1" type="string" data="-new_console zsh --login"/>
+					<value name="Cmd1" type="string" data="-new_console:d:%CD% zsh"/>
 				</key>
 				<key name="Task2" modified="2019-04-27 14:12:32" build="180206">
 					<value name="Name" type="string" data="{zsh::admin}"/>
