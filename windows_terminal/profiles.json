@@ -1,28 +1,21 @@
-
 // To view the default settings, hold "alt" while clicking on the "Settings" button.
 // For documentation on these settings, see: https://aka.ms/terminal-documentation
-
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-
     "defaultProfile": "{b882ab22-42e3-41d1-b968-7af7a457e609}",
-
-    "profiles":
-    {
-        "defaults":
-        {
+    "profiles": {
+        "defaults": {
             "fontFace": "Consolas",
             "colorScheme": "UbuntuLegit",
             "historySize": 9001,
             "fontSize": 10
         },
-        "list":
-        [
+        "list": [
             {
                 "guid": "{b882ab22-42e3-41d1-b968-7af7a457e609}",
                 "name": "ZSH",
                 "commandline": "zsh.exe",
-                "startingDirectory" : "%USERPROFILE%",
+                "startingDirectory": "%USERPROFILE%",
                 "hidden": false
             },
             {
@@ -51,9 +44,9 @@
             }
         ]
     },
-
-    "schemes": [{
-      "name": "UbuntuLegit",
+    "schemes": [
+        {
+            "name": "UbuntuLegit",
             "foreground": "#EEEEEE",
             "background": "#2C001E",
             "colors": [
@@ -74,12 +67,32 @@
                 "#34E2E2",
                 "#EEEEEE"
             ]
-    }],
-
+        }
+    ],
     "keybindings": [
-      { "command": "find", "keys": [ "ctrl+f" ] },
-      { "command": "paste", "keys": [ "ctrl+v" ] },
-      { "command": "copy", "keys": [ "ctrl+c" ] },
-      { "command": "duplicateTab", "keys": [ "ctrl+t" ] }
+        {
+            "command": "find",
+            "keys": [
+                "ctrl+f"
+            ]
+        },
+        {
+            "command": "paste",
+            "keys": [
+                "ctrl+v"
+            ]
+        },
+        {
+            "command": "copy",
+            "keys": [
+                "ctrl+c"
+            ]
+        },
+        {
+            "command": "duplicateTab",
+            "keys": [
+                "ctrl+t"
+            ]
+        }
     ]
 }
