@@ -6,7 +6,7 @@
     "profiles": {
         "defaults": {
             "fontFace": "Consolas",
-            "colorScheme": "UbuntuLegit",
+            "colorScheme": "Ubuntu",
             "historySize": 9001,
             "fontSize": 10
         },
@@ -54,7 +54,7 @@
                 "#CC0000",
                 "#306A14",
                 "#C4A000",
-                "#3465A4",
+                "#34f5A4",
                 "#75507B",
                 "#06989A",
                 "#D3D7CF",
@@ -67,6 +67,27 @@
                 "#34E2E2",
                 "#EEEEEE"
             ]
+        },
+        {
+            "name": "Ubuntu",
+            "black": "#2e3436",
+            "red": "#cc0000",
+            "green": "#4e9a06",
+            "yellow": "#c4a000",
+            "blue": "#3465a4",
+            "purple": "#75507b",
+            "cyan": "#06989a",
+            "white": "#d3d7cf",
+            "brightBlack": "#555753",
+            "brightRed": "#ef2929",
+            "brightGreen": "#8ae234",
+            "brightYellow": "#fce94f",
+            "brightBlue": "#729fcf",
+            "brightPurple": "#ad7fa8",
+            "brightCyan": "#34e2e2",
+            "brightWhite": "#eeeeec",
+            "background": "#300a24",
+            "foreground": "#eeeeec"
         }
     ],
     "keybindings": [
