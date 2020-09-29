@@ -1,0 +1,119 @@
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "defaultProfile": "{b882ab22-42e3-41d1-b968-7af7a457e609}",
+    "profiles": {
+        "defaults": {
+            "fontFace": "Consolas",
+            "colorScheme": "Ubuntu",
+            "historySize": 9001,
+            "fontSize": 10
+        },
+        "list": [
+            {
+                "guid": "{b882ab22-42e3-41d1-b968-7af7a457e609}",
+                "name": "ZSH",
+                "commandline": "zsh.exe",
+                "startingDirectory": "%USERPROFILE%",
+                "hidden": false
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "name": "Windows PowerShell",
+                "commandline": "powershell.exe",
+                "hidden": false
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "name": "cmd",
+                "commandline": "cmd.exe",
+                "hidden": false
+            },
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            }
+        ]
+    },
+    "schemes": [
+        {
+            "name": "UbuntuLegit",
+            "foreground": "#EEEEEE",
+            "background": "#2C001E",
+            "colors": [
+                "#000000",
+                "#CC0000",
+                "#306A14",
+                "#C4A000",
+                "#34f5A4",
+                "#75507B",
+                "#06989A",
+                "#D3D7CF",
+                "#555753",
+                "#EF2929",
+                "#8AE234",
+                "#FCE94F",
+                "#729FCF",
+                "#AD7FA8",
+                "#34E2E2",
+                "#EEEEEE"
+            ]
+        },
+        {
+            "name": "Ubuntu",
+            "black": "#2e3436",
+            "red": "#cc0000",
+            "green": "#4e9a06",
+            "yellow": "#c4a000",
+            "blue": "#3465a4",
+            "purple": "#75507b",
+            "cyan": "#06989a",
+            "white": "#d3d7cf",
+            "brightBlack": "#555753",
+            "brightRed": "#ef2929",
+            "brightGreen": "#8ae234",
+            "brightYellow": "#fce94f",
+            "brightBlue": "#729fcf",
+            "brightPurple": "#ad7fa8",
+            "brightCyan": "#34e2e2",
+            "brightWhite": "#eeeeec",
+            "background": "#300a24",
+            "foreground": "#eeeeec"
+        }
+    ],
+    "keybindings": [
+        {
+            "command": "find",
+            "keys": [
+                "ctrl+f"
+            ]
+        },
+        {
+            "command": "paste",
+            "keys": [
+                "ctrl+v"
+            ]
+        },
+        {
+            "command": "copy",
+            "keys": [
+                "ctrl+c"
+            ]
+        },
+        {
+            "command": "duplicateTab",
+            "keys": [
+                "ctrl+t"
+            ]
+        }
+    ]
+}

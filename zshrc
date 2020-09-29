@@ -1,6 +1,9 @@
 #!/bin/zsh
 export ZSH=$HOME/.oh-my-zsh
 
+if [[ $(uname) == "Linux" ]]; then
+fi
+
 if [[ $OSTYPE == "cygwin" ]]; then
   export PATH="/cygdrive/c/Program Files (x86)/vim/vim80:$PATH"
   export PATH="/usr/bin:$PATH"
@@ -35,8 +38,8 @@ if [[ $OSTYPE == "cygwin" ]]; then
 
   # Cmder new tab in same working directory
   # https://conemu.github.io/en/ShellWorkDir.html
-  set_conemu_cwd() { ConEmuC -StoreCWD }
-  precmd_functions+=set_conemu_cwd
+  # set_conemu_cwd() { ConEmuC -StoreCWD }
+  # precmd_functions+=set_conemu_cwd
 
   # load docker env (should be in global env vars)
   # : $(docker-machine env --shell dev 2> /dev/null)
@@ -96,3 +99,11 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
+
+if [[ $WSL_DISTRO_NAME ]]; then
+  PS1="[WSL]$PS1"
+fi
+
+if [[ -d $HOME/.asdf ]]; then
+  . $HOME/.asdf/asdf.sh
+fi

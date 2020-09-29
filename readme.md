@@ -42,6 +42,16 @@ then add "db_home: windows"
 - Install [cmder](https://github.com/cmderdev/cmder/releases)
 - Import settings from ./cmder/ConEmu.xml (in repo)
 
+## Windows Terminal
+
+- Install Windows Terminal
+- Put profile.json in:
+  %USERPROFILE%/AppData/Local/Packages/Microsoft.WindowsTerminal_*/LocalState/
+```shell
+$ # e.g.
+$ cmd /C "mklink /H %USERPROFILE%\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json %USERPROFILE%\dotfiles\windows_terminal\profiles.json"
+```
+
 # Install (Any Platform)
 
 * Execute install.sh
@@ -50,4 +60,3 @@ then add "db_home: windows"
 ## which lua dll?
 :lua print("x")
 :echo has("lua")
-
