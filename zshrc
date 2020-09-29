@@ -63,6 +63,8 @@ if [[ $(uname) = "Darwin" ]]; then
   export PATH="/usr/local/opt/curl/bin:$PATH"
   export LC_ALL=en_US.UTF-8
 
+  echo -e "\n. $(brew --prefix asdf)/asdf.sh"
+
   # added by travis gem
   [ -f /Users/Tim/.travis/travis.sh ] && source /Users/Tim/.travis/travis.sh
 fi
