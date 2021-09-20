@@ -66,14 +66,13 @@ if [[ $(uname) = "Darwin" ]]; then
   export PATH="/usr/local/opt/curl/bin:$PATH"
   export LC_ALL=en_US.UTF-8
 
-  echo -e "\n. $(brew --prefix asdf)/asdf.sh"
-
   # added by travis gem
   [ -f /Users/Tim/.travis/travis.sh ] && source /Users/Tim/.travis/travis.sh
 fi
 
 alias docker="$HOME/dev-env/bin/docker-dev.sh docker $*"
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}"'
+alias grep='grep --color=always'
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 

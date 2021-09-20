@@ -12,3 +12,6 @@
   default = simple
 [merge]
   tool = gvimdiff
+[include]
+  path = "~/.git_flow_config"
+  path = "~/.git_user"
