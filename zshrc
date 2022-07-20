@@ -57,10 +57,10 @@ if [[ $(uname) = "Darwin" ]]; then
 
   export ANDROID_HOME=~/Library/Android/sdk
   export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
-  export PATH="/usr/local/bin:$PATH"
 
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
+  export PATH="/usr/local/bin:$PATH"
   alias be="bundle exec"
   alias cf="$HOME/dotfiles/cf_wrapper.sh cf $*"
   export PATH="/usr/local/opt/curl/bin:$PATH"
@@ -73,6 +73,7 @@ fi
 alias docker="$HOME/dev-env/bin/docker-dev.sh docker $*"
 alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}"'
 alias grep='grep --color=always'
+alias k='kubectl'
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 
